@@ -1,4 +1,3 @@
-# acapzUI.github.io
-하고싶은게 있으면 바로하자
+# acapzed.github.io
 
-[바로가기](https://acapzui.github.io)
+[바로가기](https://acapzed.github.io)
