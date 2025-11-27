@@ -1,13 +1,273 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>protez</title>
-</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>acapzed - Minjae Kim</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #666;
+    }
+
+    h3 {
+      color: #667eea;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      border-left: 4px solid #667eea;
+      padding-left: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    ul li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tech-stack a {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .tech-stack a:hover {
+      transform: scale(1.2);
+    }
+
+    .projects-showcase {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+
+    .projects-showcase h3 {
+      margin-top: 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card h4 {
+      color: #667eea;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .project-card p {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #667eea;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background: #764ba2;
+      text-decoration: none;
+    }
+
+    .badge-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .badge-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #eee;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
 <body>
-  <h1>acapzUI.github.io</h1>
-  <a href="./Tetris/index.html">TETRIS</a>
-  <a href="./Tetris/index2.html">TETRIS2</a>
-  <a href="./simplewg/index.html">SimpleWG</a>
-  DO SOMETHING!
+  <div class="container">
+    <header>
+      <h1>Acapz - MJ KIM</h1>
+      <p>Backend & Game Developer | Biotech × Bioinformatics</p>
+    </header>
+
+    <section>
+      <h3>✨ Experience</h3>
+      <ul>
+        <li><a href="http://bioeng.hanyang.ac.kr/" target="_blank">한양대학교 생명공학과 졸업</a> 2017.03 - 2024.06</li>
+        <li><a href="https://boostcamp.connect.or.kr" target="_blank">네이버 부스트캠프 웹·모바일 9기</a> 2024.06 - 2024.08</li>
+        <li><a href="https://www.ssafy.com" target="_blank">삼성청년SW·AI아카데미(SSAFY) 14기</a> 2025.07 - 진행중</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>🛠️ Project</h3>
+      <ul>
+        <li><a href="https://github.com/acapzed/lostark-simulator" target="_blank">Lostark Simulator</a> - DPS 시뮬레이터 개발중 (게임 캐릭터 딜량 계산기)</li>
+      </ul>
+    </section>
+    
+    <section class="projects-showcase">
+      <h3>🎮 Mini Games & Projects</h3>
+      <div class="project-grid">
+        <div class="project-card">
+          <h4>🧱 Tetris</h4>
+          <p>Classic Tetris game implementation</p>
+          <a href="./Tetris/index.html">Play Now</a>
+        </div>
+        <div class="project-card">
+          <h4>🕹️ Simple WebGame</h4>
+          <p>Sample web-based game</p>
+          <a href="./simplewg/index.html">Play Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>😶‍🌫️ Study... </h3>
+      <div class="tech-stack">
+        <a href="https://www.java.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40"/></a>
+        <a href="https://kotlinlang.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" width="40" height="40"/></a>
+        <a href="https://spring.io/projects/spring-boot" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" width="40" height="40"/></a>
+        <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40"/></a>
+        <a href="https://go.dev" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go" width="40" height="40"/></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/></a>
+        <a href="https://react.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40"/></a>
+        <a href="https://mui.com/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material-UI" width="40" height="40"/></a>
+        <a href="https://vitejs.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite" width="40" height="40"/></a>
+        <a href="https://nodejs.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/></a>
+        <a href="https://expressjs.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" width="40" height="40"/></a>
+        <a href="https://www.mongodb.com/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40"/></a>
+        <a href="https://redis.io" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" width="40" height="40"/></a>
+        <a href="https://www.docker.com/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="40" height="40"/></a>
+        <a href="https://www.python.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
+      </div>
+    </section>
+
+    <section>
+      <h3>🧩 Problem Solving</h3>
+      <div class="badge-container">
+        <a href="https://solved.ac/acapz" target="_blank">
+          <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=acapz" alt="Solved.ac Profile" />
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>💼 Looking for Backend or Game Development opportunities</p>
+      <p>🧬 Biotech Major | 🎮 Game Lover | 💻 Developer</p>
+      <p><a href="https://github.com/acapzed" target="_blank">GitHub: @acapzed</a></p>
+    </footer>
+  </div>
 </body>
+</html>
