@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>포트폴리오 — 김민재</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="deck" aria-label="Portfolio slide deck">
+      <nav class="deck-topbar" aria-label="Slide controls">
+        <div class="brand-mark" aria-label="Portfolio owner initials">KMJ</div>
+        <div class="slide-title" id="currentTitle">Landing</div>
+        <div class="controls">
+          <button class="icon-button" type="button" id="prevSlide" aria-label="Previous slide" title="Previous slide">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <span class="counter"><span id="slideNumber">01</span>/<span id="slideTotal">08</span></span>
+          <button class="icon-button" type="button" id="nextSlide" aria-label="Next slide" title="Next slide">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </nav>
+
+      <section class="slide is-active cover cover-hero" data-title="Landing">
+        <div class="cover-kicker">
+          <span class="code-mark">&lt;/&gt;</span>
+          <span>Portfolio</span>
+        </div>
+        <div class="slide-grid cover-layout">
+          <div class="cover-copy">
+            <p class="eyebrow">realtime · wasm · simulation</p>
+            <h1>Kim Minjae —<span>Simulation Developer</span></h1>
+            <p class="lead">실제로 쓰이는 서비스와 데이터 기반 시뮬레이션 도구를 만듭니다.</p>
+            <div class="hero-rule" aria-hidden="true"></div>
+            <div class="skill-chips" aria-label="Core keywords">
+              <span>&lt;/&gt; Rust / WASM</span>
+              <span>Redis Realtime</span>
+              <span>Spring Boot</span>
+              <span>TypeScript</span>
+            </div>
+            <div class="contact-strip" aria-label="Contact links">
+              <a href="mailto:kmj9870@gmail.com"><span>Email</span><strong>kmj9870@gmail.com</strong></a>
+              <a href="https://github.com/acapzed"><span>GitHub</span><strong>github.com/acapzed</strong></a>
+              <a href="https://acapz.dev"><span>Blog</span><strong>acapz.dev</strong></a>
+              <a href="https://lostarksim.com"><span>Project</span><strong>lostarksim.com</strong></a>
+            </div>
+          </div>
+          <div class="tech-orbit image-visual" aria-label="Technical portfolio visual">
+            <img src="img-Photoroom.png" alt="Isometric backend system visual">
+          </div>
+        </div>
+      </section>
+
+      <section class="slide journey-slide" data-title="About">
+        <div class="slide-header journey-header">
+          <p class="eyebrow">02 / About</p>
+          <h2>게임을 만들던 학생에서<br>시뮬레이션 개발자로.</h2>
+          <p>게임 개발, 시스템 모델링, 실서비스 경험이 이어지며 데이터 기반 시뮬레이션과 실시간 서비스 개발로 확장되었습니다.</p>
+        </div>
+        <div class="journey-track" aria-label="Developer journey timeline">
+          <article>
+            <span class="journey-dot">01</span>
+            <small>중학생</small>
+            <h3>First Release</h3>
+            <p>직접 만든 미니게임을 실제로 배포하며 완성까지 밀어붙이는 경험을 시작했습니다.</p>
+          </article>
+          <article>
+            <span class="journey-dot">02</span>
+            <small>고등학교</small>
+            <h3>Game Development</h3>
+            <p>디미고에서 게임 개발을 이어가며 규칙, 상호작용, 플레이 흐름을 설계했습니다.</p>
+          </article>
+          <article>
+            <span class="journey-dot">03</span>
+            <small>대학교</small>
+            <h3>System Modeling</h3>
+            <p>한양대 바이오공학부에서 복잡한 시스템을 분해하고 모델링하는 사고방식을 다졌습니다.</p>
+          </article>
+          <article>
+            <span class="journey-dot">04</span>
+            <small>현재</small>
+            <h3>Real Services</h3>
+            <p>SSAFY 14기와 LostArkSim을 통해 실시간 서비스와 시뮬레이션 도구를 개발하고 있습니다.</p>
+          </article>
+        </div>
+        <div class="journey-quote">
+          <span>Principle</span>
+          <strong>연습용 프로젝트보다 실제로 쓰이는 것을 만들고, 기술 선택의 이유를 직접 검증합니다.</strong>
+        </div>
+      </section>
+
+      <section class="slide stack-slide" data-title="Stacks">
+        <div class="slide-header stack-hero">
+          <p class="eyebrow">03 / Tech Stack</p>
+          <h2>Tech Stack</h2>
+          <p>Main Stack: TypeScript · Rust · Python</p>
+        </div>
+        <div class="stack-system">
+          <article class="stack-primary-card">
+            <span>Web Service</span>
+            <h3>TypeScript</h3>
+            <p>React, Vite 기반 UI와 서비스 프론트엔드 구현에 사용하는 주력 언어입니다.</p>
+            <div class="stack-used">
+              <strong>Used in</strong>
+              <em>LostArkSim · 우주오락실 · Gumibab · Sharp</em>
+            </div>
+          </article>
+          <article class="stack-primary-card">
+            <span>Simulation</span>
+            <h3>Rust</h3>
+            <p>WASM 시뮬레이션 엔진처럼 성능과 메모리 제어가 중요한 영역에 사용합니다.</p>
+            <div class="stack-used">
+              <strong>Used in</strong>
+              <em>LostArkSim simulation engine</em>
+            </div>
+          </article>
+          <article class="stack-primary-card">
+            <span>Automation</span>
+            <h3>Python</h3>
+            <p>데이터 처리, 자동화, 실험용 스크립트처럼 빠르게 검증해야 하는 작업에 사용합니다.</p>
+            <div class="stack-used">
+              <strong>Used in</strong>
+              <em>Data processing · automation · prototype scripts</em>
+            </div>
+          </article>
+        </div>
+        <div class="stack-chip-panel" aria-label="Supporting stack keywords">
+          <strong>Other stacks</strong>
+          <span>WebAssembly</span>
+          <span>React 19</span>
+          <span>Vite</span>
+          <span>Zustand</span>
+          <span>Spring Boot</span>
+          <span>Java / Kotlin</span>
+          <span>Go</span>
+          <span>STOMP</span>
+          <span>PostgreSQL</span>
+          <span>MySQL</span>
+          <span>Redis</span>
+          <span>Docker</span>
+          <span>Nginx</span>
+          <span>Cloudflare</span>
+          <span>GitHub Actions</span>
+          <span>DigitalOcean</span>
+          <span>Prometheus</span>
+          <span>Grafana</span>
+          <span>Unity NGO</span>
+        </div>
+      </section>
+
+      <section class="slide lostark-slide" data-title="LostArkSim">
+        <div class="lostark-layout">
+          <div class="lostark-copy">
+            <p class="eyebrow">04 / Project 1</p>
+            <p class="case-label">Lost Ark DPS / skill rotation simulator</p>
+            <h2>LostArkSim</h2>
+            <h3>경험담이 아니라 시뮬레이션 데이터로 캐릭터 성능을 판단합니다.</h3>
+            <p>아르카나처럼 카드 랜덤성과 순간 판단이 큰 직업은 단일 사이클 평균만으로 기대 DPS를 알기 어렵습니다. 스킬 로테이션을 수천 회 반복 실행해 DPS 분포, 스킬별 데미지 비중, 시전 순서를 확인하는 웹 기반 시뮬레이터를 설계했습니다.</p>
+            <div class="lostark-meta">
+              <span>Monte Carlo</span>
+              <span>Client-side WASM</span>
+              <span>Rust Engine</span>
+              <span>lostarksim.com</span>
+            </div>
+          </div>
+          <div class="sim-panel" aria-label="LostArkSim result preview">
+            <div class="sim-panel-top">
+              <div>
+                <span>Arcana Profile</span>
+                <strong>10,000 runs</strong>
+              </div>
+              <em>WASM</em>
+            </div>
+            <div class="dps-card">
+              <span>Expected DPS</span>
+              <strong>42.8M</strong>
+              <small>p10 39.4M · p90 46.1M</small>
+              <div class="chart-bars" aria-hidden="true">
+                <i style="height: 34%"></i>
+                <i style="height: 52%"></i>
+                <i style="height: 68%"></i>
+                <i style="height: 88%"></i>
+                <i style="height: 72%"></i>
+                <i style="height: 56%"></i>
+                <i style="height: 38%"></i>
+              </div>
+            </div>
+            <div class="sim-grid">
+              <div>
+                <span>Skill Share</span>
+                <strong>Celestial Rain</strong>
+                <small>28.4% damage</small>
+              </div>
+              <div>
+                <span>Rotation</span>
+                <strong>Draw → Stack → Ruin</strong>
+                <small>event sequence trace</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide decision-slide lostark-decision-slide" data-title="LostArkSim Decisions">
+        <div class="slide-header compact decision-head">
+          <p class="eyebrow">05 / Technical Decisions</p>
+          <h2>성능, 비용, 분석을 기준으로 바꾼 설계.</h2>
+        </div>
+        <div class="decision-grid">
+          <article>
+            <span>01</span>
+            <h3>Server Compute → WASM</h3>
+            <p>연산집약적 시뮬레이션을 서버에서 처리하면 고사양 서버와 대기시간 문제가 커집니다. 연산을 클라이언트 WASM으로 옮겨 서버 비용을 낮췄습니다.</p>
+            <p class="decision-note">결과: 브라우저에서 바로 돌릴 수 있는 구조가 되었고, 반복 실행 비용도 크게 줄었습니다.</p>
+            <small>cost down · lower latency</small>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Go → Rust</h3>
+            <p>WASM Worker 환경에서 profile 메모리 공유와 직접 제어가 필요했습니다. Go의 구조적 한계를 피하고 Rust 기반 엔진으로 전환했습니다.</p>
+            <p class="decision-note">결과: 엔진의 메모리 제어가 명확해졌고, profile 공유 방식도 단순해졌습니다.</p>
+            <small>memory control · wasm engine</small>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>MongoDB → PostgreSQL</h3>
+            <p>시뮬레이션 결과가 쌓이면 통계, 집계, 분석 쿼리가 중요해집니다. 관계형 구조로 전환해 데이터 분석 가능성을 확보했습니다.</p>
+            <p class="decision-note">결과: 평균, 분포, 랭킹 같은 결과를 쿼리로 바로 다룰 수 있게 됐습니다.</p>
+            <small>aggregation · analytics</small>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>CRA → Vite</h3>
+            <p>5-10분 이상 걸리던 빌드 병목을 줄여 개발 피드백 루프를 개선했습니다. 기술 선택에서 개발 속도도 핵심 기준이 되었습니다.</p>
+            <p class="decision-note">결과: 수정-확인 사이클이 짧아져 로테이션 규칙과 UI를 훨씬 빠르게 다듬을 수 있었습니다.</p>
+            <small>build speed · feedback loop</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide dense-slide" data-title="SSAFY Projects">
+        <div class="slide-header">
+          <p class="eyebrow">06 / Project 2</p>
+          <h2>SSAFY와 사이드 프로젝트는 작은 문제를 빠르게 검증하는 연습이었습니다.</h2>
+        </div>
+        <div class="project-card-grid">
+          <article class="project-card">
+            <p class="case-label">Chrome Extension</p>
+            <h3>Gumibab</h3>
+            <p>SSAFY 구미 캠퍼스에서 만든 식단 관리 확장 프로그램입니다. 자주 보는 식단 정보를 브라우저에서 빠르게 확인하고 관리할 수 있게 만들었습니다.</p>
+            <div class="project-card-meta">
+              <span>일상 도구</span>
+              <span>브라우저 기반</span>
+              <span>Chrome Extension</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="case-label">AI Q&amp;A</p>
+            <h3>Sharp</h3>
+            <p>막연한 프로젝트 아이디어를 질문으로 풀어 구조화된 계획과 마인드맵으로 정리하는 도구입니다. 아이디어를 빠르게 구체화하는 데 집중했습니다.</p>
+            <div class="project-card-meta">
+              <span>아이디어 구조화</span>
+              <span>마인드맵</span>
+              <span>AI-guided</span>
+            </div>
+          </article>
+          <article class="project-card">
+            <p class="case-label">Google Play</p>
+            <h3>Perfume</h3>
+            <p>상하좌우 2칸 향수 확산 규칙과 색상 혼합 제약을 기반으로 48개 난이도를 직접 기획하고 구현한 퍼즐 게임입니다.</p>
+            <div class="project-card-meta">
+              <span>48 levels</span>
+              <span>Puzzle game</span>
+              <span>Google Play</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide decision-slide" data-title="Project 2 Troubleshooting">
+        <div class="slide-header compact">
+          <p class="eyebrow">07 / Project 2 troubleshooting</p>
+          <h2>두 번째 프로젝트는 실제 경험을 더 채워 넣을 자리입니다.</h2>
+        </div>
+        <div class="decision-grid">
+          <article>
+            <span>Scope</span>
+            <h3>사용자 문제 정의</h3>
+            <p>Gumibab은 “식단 정보를 어떻게 더 쉽게 확인하고 관리할 것인가”를 중심으로 정리하면 좋습니다.</p>
+            <small>필요: 대상 사용자, 사용 흐름, 핵심 기능</small>
+          </article>
+          <article>
+            <span>Chrome</span>
+            <h3>확장 프로그램 제약</h3>
+            <p>Chrome Extension의 권한, storage, popup/content script 구조에서 겪은 이슈를 넣으면 기술적 설득력이 생깁니다.</p>
+            <small>필요: manifest 버전, 사용 API, 배포 여부</small>
+          </article>
+          <article>
+            <span>Team</span>
+            <h3>역할과 협업</h3>
+            <p>SSAFY 프로젝트라면 본인 역할, 팀 규모, 맡은 화면/기능, 코드 리뷰나 일정 관리 방식을 구체적으로 써야 합니다.</p>
+            <small>필요: 팀원 수, 담당 파트, 기간</small>
+          </article>
+          <article>
+            <span>Result</span>
+            <h3>결과와 배운 점</h3>
+            <p>정량 지표가 없어도 사용 시나리오, 완성도, 데모 링크, 회고를 넣으면 프로젝트가 살아납니다.</p>
+            <small>필요: GitHub 링크, 데모/스크린샷, 가장 큰 시행착오</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide closing" data-title="Conclusion">
+        <div class="closing-inner">
+          <p class="eyebrow">08 / Conclusion</p>
+          <h2>연습용 프로젝트보다 실제로 쓰이는 것을 만들고, 문제를 끝까지 검증합니다.</h2>
+          <p>시뮬레이션, 게임, 브라우저 확장, AI 도구까지 공통점은 “내가 이해한 문제를 동작하는 결과물로 만든다”는 점입니다.</p>
+          <div class="contact-summary">
+            <span>전화: 010-0000-0000</span>
+            <span>이메일: contact@example.com</span>
+            <span>GitHub: github.com/acapzed</span>
+            <span>Blog: acapz.dev</span>
+          </div>
+          <div class="closing-links">
+            <a class="primary-link" href="https://github.com/acapzed">GitHub</a>
+            <a class="secondary-link" href="https://acapz.dev/about/">About</a>
+            <a class="secondary-link" href="https://lostarksim.com">LostArkSim</a>
+            <a class="secondary-link" href="포트폴리오 — 김민재.pdf" download>PDF 다운로드</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
