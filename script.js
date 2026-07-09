@@ -1,19 +1,36 @@
 const slides = Array.from(document.querySelectorAll(".slide"));
-const prevButton = document.querySelector("#prevSlide");
-const nextButton = document.querySelector("#nextSlide");
 const slideNumber = document.querySelector("#slideNumber");
 const slideTotal = document.querySelector("#slideTotal");
-const currentTitle = document.querySelector("#currentTitle");
 const progressBar = document.querySelector("#progressBar");
+const downloadPdfButton = document.querySelector("#downloadPdf");
 
 let activeIndex = 0;
-let isProgrammaticScroll = false;
+let isWheelLocked = false;
+
+function getSlideTopOffset() {
+  return slides[0] ? slides[0].offsetTop : 0;
+}
+
+function scrollToSlide(index) {
+  const targetIndex = Math.max(0, Math.min(index, slides.length - 1));
+  const targetTop = Math.max(0, slides[targetIndex].offsetTop - getSlideTopOffset());
+
+  window.scrollTo({
+    top: targetTop,
+    behavior: "smooth",
+  });
+
+  window.setTimeout(() => {
+    window.scrollTo({ top: targetTop, behavior: "auto" });
+    setActiveSlide(targetIndex);
+  }, 560);
+}
 
 function formatNumber(value) {
   return String(value).padStart(2, "0");
 }
 
-function showSlide(index) {
+function setActiveSlide(index) {
   activeIndex = Math.max(0, Math.min(index, slides.length - 1));
 
   slides.forEach((slide, slideIndex) => {
@@ -22,61 +39,71 @@ function showSlide(index) {
 
   slideNumber.textContent = formatNumber(activeIndex + 1);
   slideTotal.textContent = formatNumber(slides.length);
-  currentTitle.textContent = slides[activeIndex].dataset.title || "Portfolio";
   progressBar.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
-  prevButton.disabled = activeIndex === 0;
-  nextButton.disabled = activeIndex === slides.length - 1;
-}
-
-function goToSlide(index) {
-  showSlide(index);
-  isProgrammaticScroll = true;
-  slides[activeIndex].scrollIntoView({ behavior: "smooth", block: "start" });
-  window.setTimeout(() => {
-    isProgrammaticScroll = false;
-  }, 450);
 }
 
 function syncActiveSlideFromScroll() {
-  if (isProgrammaticScroll) {
-    return;
-  }
-
-  const viewportAnchor = window.scrollY + window.innerHeight * 0.38;
+  const anchor = window.scrollY + getSlideTopOffset();
   const closestIndex = slides.reduce((bestIndex, slide, slideIndex) => {
-    const bestDistance = Math.abs(slides[bestIndex].offsetTop - viewportAnchor);
-    const slideDistance = Math.abs(slide.offsetTop - viewportAnchor);
+    const bestDistance = Math.abs(slides[bestIndex].offsetTop - anchor);
+    const slideDistance = Math.abs(slide.offsetTop - anchor);
     return slideDistance < bestDistance ? slideIndex : bestIndex;
   }, 0);
 
-  showSlide(closestIndex);
+  setActiveSlide(closestIndex);
 }
-
-prevButton.addEventListener("click", () => goToSlide(activeIndex - 1));
-nextButton.addEventListener("click", () => goToSlide(activeIndex + 1));
-
-window.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
-    event.preventDefault();
-    goToSlide(activeIndex + 1);
-  }
-
-  if (event.key === "ArrowLeft" || event.key === "PageUp") {
-    event.preventDefault();
-    goToSlide(activeIndex - 1);
-  }
-
-  if (event.key === "Home") {
-    event.preventDefault();
-    goToSlide(0);
-  }
-
-  if (event.key === "End") {
-    event.preventDefault();
-    goToSlide(slides.length - 1);
-  }
-});
 
 window.addEventListener("scroll", syncActiveSlideFromScroll, { passive: true });
 
-showSlide(0);
+window.addEventListener("wheel", (event) => {
+  if (isWheelLocked) {
+    event.preventDefault();
+    return;
+  }
+
+  if (Math.abs(event.deltaY) < 8) {
+    return;
+  }
+
+  event.preventDefault();
+  isWheelLocked = true;
+
+  const direction = event.deltaY > 0 ? 1 : -1;
+  const targetIndex = Math.max(0, Math.min(activeIndex + direction, slides.length - 1));
+  scrollToSlide(targetIndex);
+
+  window.setTimeout(() => {
+    isWheelLocked = false;
+  }, 620);
+}, { passive: false });
+
+window.addEventListener("keydown", (event) => {
+  if (event.key !== "ArrowDown" && event.key !== "ArrowUp" && event.key !== "PageDown" && event.key !== "PageUp") {
+    return;
+  }
+
+  event.preventDefault();
+  const direction = event.key === "ArrowUp" || event.key === "PageUp" ? -1 : 1;
+  const targetIndex = Math.max(0, Math.min(activeIndex + direction, slides.length - 1));
+  scrollToSlide(targetIndex);
+});
+
+if (downloadPdfButton) {
+  downloadPdfButton.addEventListener("click", () => window.print());
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    const targetIndex = slides.indexOf(target);
+
+    if (targetIndex === -1) {
+      return;
+    }
+
+    event.preventDefault();
+    scrollToSlide(targetIndex);
+  });
+});
+
+setActiveSlide(0);
